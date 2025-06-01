@@ -2,7 +2,7 @@
   position: absolute;
   left: 50%;
   bottom: 355vh;
-  /* transform: translateX(-50%); */
+  transform: translateX(-50%);
   background: var(--color-black);
   border: none;
   border-radius: 0px;
@@ -58,13 +58,13 @@
 
 .glitch::before {
   animation: glitch-effect 3s infinite;
-  color: var(--color-grey);
+  color: rgb(177, 143, 105);
   left: 2px;
 }
 
 .glitch::after {
   animation: glitch-effect 2s infinite;
-  color: var(--color-orange);
+  color: var(--color-gray);
   left: -2px;
 }
 
@@ -74,11 +74,11 @@
     opacity: 0.8;
   }
   7% {
-    transform: translate(-2px, -3px);
+    transform: translate(-1px, -2px);
     opacity: 0.6;
   }
   10% {
-    transform: translate(2px, 3px);
+    transform: translate(1px, 2px);
     opacity: 0.8;
   }
   20% {
@@ -86,11 +86,11 @@
     opacity: 0.8;
   }
   27% {
-    transform: translate(2px, 3px);
+    transform: translate(1px, 2px);
     opacity: 0.6;
   }
   30% {
-    transform: translate(-2px, -3px);
+    transform: translate(-1px, -2px);
     opacity: 0.8;
   }
   35% {
@@ -153,12 +153,12 @@
 }
 
 .cyber-button:hover {
-    transform: scale(1.2);
+    transform: translateX(-50%) scale(1.2);
     box-shadow:
         0 0 25px var(--color-orange),
         inset 0 0 25px var(--color-orange);
 }
 
 .cyber-button:active {
-  transform: scale(0.95);
+  transform: translateX(-50%) scale(0.95);
 }
