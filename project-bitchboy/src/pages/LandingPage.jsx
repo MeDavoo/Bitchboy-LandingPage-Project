@@ -1,8 +1,19 @@
+import React, { useState } from "react";
 import "./css/LandingPage.css";
 import "./css/SubscribeButton.css";
 import ModelAnimated from "./../components/jsx/LandingPage/ModelAnimated.jsx";
+import PopupModal from "./../components/jsx/PopupModal/PopupModal.jsx";
+
+
 
 function LandingPage() {
+  
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
+
+
   return (
     <div style={{ minHeight: "100vh", minWidth: "100vw", background: "#0c0c0c", position: "relative" }}>
       <ModelAnimated />
@@ -15,17 +26,21 @@ function LandingPage() {
       </div>
 
       {/* Subscribe button */}
-      <button class="cyber-button">
+      <button className="cyber-button" onClick={handleOpenModal}>
         <span data-text="SIGN UP NOW" class="glitch">SIGN UP NOW</span>
         <span class="cyberpunk-border"></span>
         <span class="gradient-overlay"></span>
         <span class="scanline"></span>
       </button>
 
+      {isModalOpen && (
+        <PopupModal className="myModal" onClose={handleCloseModal} />
+      )}
+
       {/* Diagonal stripes */}
-      <div className="diagonal-stripe" id="stripe1"></div>
+      {/* <div className="diagonal-stripe" id="stripe1"></div>
       <div className="diagonal-stripe" id="stripe2"></div>
-      <div className="diagonal-stripe" id="stripe3"></div>
+      <div className="diagonal-stripe" id="stripe3"></div> */}
 
       {/* Scroll Sections */}
       <section id="section-1" className="scroll-section"></section>
