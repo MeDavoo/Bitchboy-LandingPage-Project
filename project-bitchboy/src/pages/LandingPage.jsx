@@ -1,4 +1,5 @@
 import "./css/LandingPage.css";
+import "./css/SubscribeButton.css";
 import ModelAnimated from "./../components/jsx/LandingPage/ModelAnimated.jsx";
 
 function LandingPage() {
@@ -14,7 +15,12 @@ function LandingPage() {
       </div>
 
       {/* Subscribe button */}
-      <button className="subscribe-button">Sign Up for Updates</button>
+      <button class="cyber-button">
+        <span data-text="SIGN UP NOW" class="glitch">SIGN UP NOW</span>
+        <span class="cyberpunk-border"></span>
+        <span class="gradient-overlay"></span>
+        <span class="scanline"></span>
+      </button>
 
       {/* Diagonal stripes */}
       <div className="diagonal-stripe" id="stripe1"></div>

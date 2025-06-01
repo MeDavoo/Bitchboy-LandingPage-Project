@@ -76,15 +76,6 @@ body {
   z-index: 1;
 }
 
-.subscribe-button {
-  position: absolute;
-  left: 50%;
-  bottom: 355vh;
-  transform: translateX(-50%);
-  font-size: 1.5rem;
-  z-index: 3;
-}
-
 .scroll-section {
   height: 100vh;
   width: 100vw;
