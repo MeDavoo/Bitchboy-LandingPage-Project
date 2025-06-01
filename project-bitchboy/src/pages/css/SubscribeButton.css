@@ -2,7 +2,7 @@
   position: absolute;
   left: 50%;
   bottom: 355vh;
-  transform: translateX(-50%);
+  /* transform: translateX(-50%); */
   background: var(--color-black);
   border: none;
   border-radius: 0px;

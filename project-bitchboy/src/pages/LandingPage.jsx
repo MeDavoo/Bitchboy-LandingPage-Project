@@ -34,7 +34,7 @@ function LandingPage() {
       </button>
 
       {isModalOpen && (
-        <PopupModal className="myModal" onClose={handleCloseModal} />
+        <PopupModal className="myModal relative w-full max-w-200 mx-auto font-mono z-50" onClose={handleCloseModal} />
       )}
 
       {/* Diagonal stripes */}
