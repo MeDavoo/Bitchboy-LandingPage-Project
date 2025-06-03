@@ -83,6 +83,19 @@ body {
   transform: translateX(-50%);
   font-size: 1.5rem;
   z-index: 3;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-weight: 500;
+  font-family: inherit;
+  color: #ffffff;
+  background-color: #ff6b00;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.subscribe-button:hover {
+  border-color: #ffffff;
 }
 
 .custom-text1 {
@@ -117,6 +130,18 @@ body {
   font-size: 3rem;
 }
 
+.sign-up-button {
+  border-radius: 12px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  color: #ffffff;
+  background-color: #ff6b00;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
 
 .read-the-docs {
   color: #888;

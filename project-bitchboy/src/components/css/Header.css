@@ -1,9 +1,12 @@
 .header {
     width: 100vw;
     background: #ffffff;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     border-bottom: #888 0.125rem solid;
     display: flex;
     align-items: center;
+    vertical-align: center;
     z-index: 20;
 }
 
@@ -35,8 +38,6 @@
 .header-link:hover {
   color: var(--color-orange);
 }
-
-
 
 .header-pages{
     position: absolute;
