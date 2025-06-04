@@ -3,11 +3,7 @@ import "../../css/PopupModal/PopupModal.css";
 function PopupModal({ className, onClose }) {
   return (
     <div className={`modal-overlay ${className} `}>
-      {/* <div className="modal-content">
-        <button className="close-button" onClick={onClose}>X</button>
-        <h2>Subscribe</h2>
-        <p>Get notified for updates!</p>
-      </div> */}
+    
       <div class="relative p-30 bg-black border-2 border-green-400 rounded-lg shadow-lg overflow-hidden">
         
         <div class="absolute top-0 left-0 w-6 h-1 bg-green-400"></div>
@@ -23,9 +19,13 @@ function PopupModal({ className, onClose }) {
 
         <label
           class="mb-3 text-green-400 text-sm tracking-wider flex items-center justify-center"
-          for="password"
         >
-          <span class="text-green-300 font-bold text-2xl">Subscribe to our newsletter!</span>
+          <span class="text-green-300 font-bold text-5xl animate-pulse">JOIN ÜS</span>
+        </label>
+        <label
+          class="mb-3 text-green-400 text-sm tracking-wider flex items-center justify-center"
+        >
+          <span class="text-green-300 text-lg">SUBSCRIBE TO OUR NEWSLETTER AND RECEIVE THE LATEST UPDATES ABOUT BITCHBOY COMMUNITY</span>
         </label>
 
         <div class="relative">
