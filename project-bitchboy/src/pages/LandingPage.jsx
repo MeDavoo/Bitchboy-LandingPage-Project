@@ -7,10 +7,10 @@ import PopupModal from "./../components/jsx/PopupModal/PopupModal.jsx";
 import Balatro from "./Balatro/Balatro.jsx";
 
 function LandingPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
-  const handleOpenModal = () => setIsModalOpen(true);
-  const handleCloseModal = () => setIsModalOpen(false);
+  const openModal = () => setShowModal(true);
+  const closeModal = () => setShowModal(false);
 
   return (
     <div
@@ -48,7 +48,7 @@ function LandingPage() {
       </div>
 
       {/* Subscribe button */}
-      <button className="cyber-button" onClick={handleOpenModal}>
+      <button className="cyber-button" onClick={openModal}>
         <span data-text="SIGN UP NOW" class="glitch">
           SIGN UP NOW
         </span>
@@ -57,10 +57,11 @@ function LandingPage() {
         <span class="scanline"></span>
       </button>
 
-      {isModalOpen && (
+      {showModal && (
         <PopupModal
-          className="myModal relative w-full max-w-200 mx-auto font-mono z-50"
-          onClose={handleCloseModal}
+          setShowModal={setShowModal}
+          className="relative w-full max-w-200 mx-auto font-mono z-50"
+          onClose={closeModal}
         />
       )}
 
