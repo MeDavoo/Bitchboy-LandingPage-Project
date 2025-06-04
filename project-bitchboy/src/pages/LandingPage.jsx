@@ -32,7 +32,7 @@ function LandingPage() {
           contrast={1}
           spinAmount={0.1}
           spinSpeed={10}
-          // mouseInteraction={false}
+          mouseInteraction={false}
           // spinEase={10}
         />
       </div>
