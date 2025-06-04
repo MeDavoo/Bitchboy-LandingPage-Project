@@ -11,6 +11,17 @@ function PopupModal({ className, setShowModal }) {
       <Backdrop closeModal={closeModal} />
       <div className={`modal-overlay ${className} `}>
         <div class="absolute mt-25 flex flex-col p-20 bg-black border-2 border-green-400 rounded-lg shadow-lg overflow-hidden z-3">
+          
+          {/* Close button */}
+          <div>
+            <span
+              className="absolute top-0 right-2 p-4 text-green-400 cursor-pointer z-4 text-4xl font-bold"
+              onClick={closeModal}
+            >
+              &times;
+            </span>
+          </div>
+
           <div class="absolute top-0 left-0 w-6 h-1 bg-green-400"></div>
           <div class="absolute top-0 left-0 w-1 h-6 bg-green-400"></div>
           <div class="absolute top-0 right-0 w-6 h-1 bg-green-400"></div>
