@@ -19,7 +19,7 @@ export default function AboutPage() {
           // spinEase={10}
         />
       </div>
-      <Lanyard position={[0, 0, 15]} gravity={[0, -20, 0]} />
+      <Lanyard position={[0, 0, 15]} gravity={[0, -40, 0]} />
     </>
   );
 }
