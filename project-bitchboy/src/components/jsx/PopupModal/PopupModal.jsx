@@ -25,9 +25,7 @@ function PopupModal({ className, onClose }) {
           class="mb-3 text-green-400 text-sm tracking-wider flex items-center justify-center"
           for="password"
         >
-          <span class="mr-5 opacity-200 animate-pulse font-bold text-3xl">Ü</span>
-          <span class="text-green-300 font-bold text-2xl">GET THE LATEST NEWS</span>
-          <span class="ml-5 opacity-200 animate-pulse font-bold text-3xl">Ü</span>
+          <span class="text-green-300 font-bold text-2xl">Subscribe to our newsletter!</span>
         </label>
 
         <div class="relative">
@@ -38,15 +36,6 @@ function PopupModal({ className, onClose }) {
           />
         </div>
 
-        <div class="mt-4 flex flex-col gap-2">
-          <p class="text-xs text-green-500 opacity-80 flex items-center gap-2">
-            <span class="w-2 h-2 bg-red-500 rounded-full"></span>
-            <span>
-              <span class="text-red-400">WARNING:</span> Unauthorized access
-              will be reported
-            </span>
-          </p>
-        </div>
 
         <div class="absolute top-0 right-12 w-px h-4 bg-green-500/50"></div>
         <div class="absolute top-0 right-16 w-px h-6 bg-green-500/30"></div>
