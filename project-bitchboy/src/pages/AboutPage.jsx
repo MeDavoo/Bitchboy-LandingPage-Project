@@ -5,20 +5,6 @@ import TextSection from "../components/jsx/TextSection.jsx";
 export default function AboutPage() {
     return (
         <div className="background-container">
-            <div className="svg-right-wrapper">
-                <img
-                    className="svg-right"
-                    src={"/images/about-page/right.svg"}
-                    alt={""}
-                />
-            </div>
-            <div className="blocksystem-image-wrapper">
-                <img
-                    className="blocksystem-image"
-                    src={"/images/about-page/blocksystem-image.png"}
-                    alt={""}
-                />
-            </div>
             <div className="person-right-image-wrapper">
                 <img
                     className="person-image"
@@ -44,25 +30,6 @@ export default function AboutPage() {
                     title={"CHRISTOS 1"}
                     text={"Interaction Tech @ UTwente & Creator @ BLOCK SYSTEM \n Lorem Ipsum"}
                 ></TextSection>
-            </div>
-            <div className="concert-experience-section">
-                <TextSection
-                    title={"230+"}
-                    text={"CONCERT \n EXPERIENCE"}
-                ></TextSection>
-            </div>
-            <div className="amount-of-djs-section">
-                <TextSection
-                    title={"100+"}
-                    text={"WORK WITH \n DJS"}
-                ></TextSection>
-            </div>
-            <div className="svg-circles-wrapper">
-                <img
-                    className="svg-circles"
-                    src={"/images/about-page/circles.svg"}
-                    alt={""}
-                />
             </div>
             <div className="svg-bottom-wrapper">
                 <img
