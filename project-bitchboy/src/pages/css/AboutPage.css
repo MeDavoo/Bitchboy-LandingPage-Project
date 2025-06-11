@@ -7,15 +7,17 @@
 .svg-bottom-wrapper {
     overflow: hidden;
     position: absolute;
-    bottom: -25rem;
+    bottom: 0;
     z-index: -1;
 }
 
 .person-right-image-wrapper {
+    width: 30rem;
+    height: 30rem;
     overflow: hidden;
     position: absolute;
     right: 3rem;
-    bottom: 20rem;
+    bottom: 0;
     z-index: 0;
 }
 
@@ -29,10 +31,12 @@
 }
 
 .person-left-image-wrapper {
+    width: 30rem;
+    height: 30rem;
     overflow: hidden;
     position: absolute;
     left: 21rem;
-    bottom: 20rem;
+    bottom: 0;
     z-index: 0;
 }
 
@@ -80,4 +84,130 @@
     border-radius: 1.5rem;
     width: 40%;
     height: auto;
+}
+
+.team-label {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--color-white);
+    text-align: center;
+    position: absolute;
+    bottom: 11rem;
+    right: 49rem;
+    z-index: 30;
+}
+
+.background-label-wrapper {
+
+}
+
+.background-label-main-layer {
+    font-size: 15rem;
+    font-weight: bold;
+    color: var(--color-black);
+    text-align: center;
+    position: absolute;
+    transform-origin: center center;
+    transform: rotate3d(-1, 1, 1, 40deg);
+    z-index: -101;
+}
+
+.background-label-layer-1 {
+    font-size: 13.5rem;
+    font-weight: bold;
+    color: #252423;
+    text-align: center;
+    position: absolute;
+    right: -20rem;
+    transform-origin: center center;
+    transform: rotate3d(-1, 1, 1, 40deg);
+    z-index: -102;
+}
+
+.background-label-layer-2 {
+    font-size: 11rem;
+    font-weight: bold;
+    color: #47423e;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: -25rem;
+    transform-origin: center center;
+    transform: rotate3d(-1, 1, 1, 40deg);
+    z-index: -103;
+}
+
+.background-label-layer-3 {
+    font-size: 9.5rem;
+    font-weight: bold;
+    color: #65574c;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform-origin: center center;
+    transform: rotate3d(-1, 1, 1, 40deg);
+    z-index: -104;
+}
+
+.background-label-layer-4 {
+    font-size: 7rem;
+    font-weight: bold;
+    color: #83664f;
+    text-align: center;
+    position: absolute;
+    margin-top: 5rem;
+    transform-origin: center center;
+    transform: rotate3d(-1, 1, 1, 40deg);
+    z-index: -105;
+}
+
+.background-label-layer-5 {
+    font-size: 5.5rem;
+    font-weight: bold;
+    color: #9e6d47;
+    text-align: center;
+    position: absolute;
+    right: 5rem;
+    top: 10rem;
+    transform-origin: center center;
+    transform: rotate3d(-1, 1, 1, 40deg);
+    z-index: -106;
+}
+
+.background-label-layer-6 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ba7038;
+    text-align: center;
+    position: absolute;
+    bottom: 45rem;
+    left: 25rem;
+    transform-origin: center center;
+    transform: rotate3d(-1, 1, 1, 40deg);
+    z-index: -107;
+}
+
+.background-label-layer-7 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e17421;
+    text-align: center;
+    position: absolute;
+    transform-origin: center center;
+    transform: rotate3d(-1, 1, 1, 40deg);
+    z-index: -108;
+}
+
+.background-label-layer-8 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ff6f02;
+    text-align: center;
+    position: absolute;
+    bottom: 25rem;
+    left: 45rem;
+    transform-origin: center center;
+    transform: rotate3d(-1, 1, 1, 40deg);
+    z-index: -109;
 }
