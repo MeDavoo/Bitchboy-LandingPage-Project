@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useState } from 'react';
+import React, { useEffect, useCallback, useState, useRef } from 'react';
 import { useVJ } from '../contexts/VJContext';
 import { musicManager } from '../utils/musicManager';
 import './VJGame.css';
@@ -60,6 +60,8 @@ const VJGame = () => {
 	const [beatTimer, setBeatTimer] = useState(null);
 	const [audioContext, setAudioContext] = useState(null);
 	const [musicInitialized, setMusicInitialized] = useState(false);
+	const [level3Audio, setLevel3Audio] = useState(null); // Track Level 3 audio element
+	const level3AudioRef = useRef(null); // Ref to avoid dependency issues
 
 	// Current level data
 	const currentLevelData = GAME_LEVELS[gameMode.currentLevel];
@@ -139,10 +141,20 @@ const VJGame = () => {
 
 		// SIMPLE MUSIC FOR LEVEL 3 ONLY!
 		if (level === 3) {
+			// Stop any existing Level 3 audio first
+			if (level3Audio) {
+				level3Audio.pause();
+				level3Audio.currentTime = 0;
+			}
+
 			// Create fresh audio element every time to avoid conflicts
 			const audio = new Audio('/music/bitchboys-song-3.wav');
 			audio.loop = true;
 			audio.volume = 0.7;
+
+			// Track this audio element so we can stop it later
+			setLevel3Audio(audio);
+			level3AudioRef.current = audio;
 
 			audio.play().then(() => {
 				// Start beat detection SYNCHRONIZED with music start
@@ -246,9 +258,13 @@ const VJGame = () => {
 		// Stop the timer display
 		setTimeRemaining(0);
 
-		// Stop current music (unless Level 3)
-		if (gameMode.currentLevel !== 3) {
-			musicManager.stop();
+		// Stop current music - INCLUDING Level 3 music now!
+		musicManager.stop();
+		if (level3AudioRef.current) {
+			level3AudioRef.current.pause();
+			level3AudioRef.current.currentTime = 0;
+			level3AudioRef.current = null;
+			setLevel3Audio(null);
 		}
 
 		// Award completion bonus
@@ -368,9 +384,13 @@ const VJGame = () => {
 		// Stop the timer display
 		setTimeRemaining(0);
 
-		// Stop music and play fail sound (unless Level 3)
-		if (gameMode.currentLevel !== 3) {
-			musicManager.stop();
+		// Stop all music including Level 3 on failure
+		musicManager.stop();
+		if (level3AudioRef.current) {
+			level3AudioRef.current.pause();
+			level3AudioRef.current.currentTime = 0;
+			level3AudioRef.current = null;
+			setLevel3Audio(null);
 		}
 		musicManager.playFailSound();
 
@@ -413,13 +433,25 @@ const VJGame = () => {
 			if (gameTimer) clearInterval(gameTimer);
 			if (beatTimer) clearInterval(beatTimer);
 			musicManager.stop();
+			// Also stop Level 3 audio on cleanup
+			if (level3AudioRef.current) {
+				level3AudioRef.current.pause();
+				level3AudioRef.current.currentTime = 0;
+			}
 		};
 	}, []);
 
-	// Stop music when game is deactivated (but not when switching levels)
+	// Stop music when game is deactivated (including Level 3 music)
 	useEffect(() => {
 		if (!gameMode.isActive) {
 			musicManager.stop();
+			// Also stop Level 3 audio when closing gamemode
+			if (level3AudioRef.current) {
+				level3AudioRef.current.pause();
+				level3AudioRef.current.currentTime = 0;
+				level3AudioRef.current = null;
+				setLevel3Audio(null);
+			}
 		}
 	}, [gameMode.isActive]);
 
@@ -437,6 +469,14 @@ const VJGame = () => {
 		if (beatTimer) {
 			clearInterval(beatTimer);
 			setBeatTimer(null);
+		}
+
+		// Stop Level 3 audio when switching levels
+		if (level3AudioRef.current) {
+			level3AudioRef.current.pause();
+			level3AudioRef.current.currentTime = 0;
+			level3AudioRef.current = null;
+			setLevel3Audio(null);
 		}
 	}, [gameMode.currentLevel]);
 

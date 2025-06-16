@@ -303,17 +303,17 @@ const VJController = () => {
 			}
 		});
 
-		// Add event listener
-		document.addEventListener('keydown', handleKeyDown);
+		// DISABLED OLD EVENT LISTENER TO PREVENT CONFLICTS WITH VJKeyboardControls
+		// document.addEventListener('keydown', handleKeyDown);
 
 		return () => {
-			document.removeEventListener('keydown', handleKeyDown);
+			// document.removeEventListener('keydown', handleKeyDown);
 			// Clean up intervals
 			if (effects.strobeInterval) {
 				clearInterval(effects.strobeInterval);
 			}
 		};
-	}, [handleKeyDown, effects.strobeInterval]);
+	}, [effects.strobeInterval]);
 
 	// Apply effects when they change
 	useEffect(() => {

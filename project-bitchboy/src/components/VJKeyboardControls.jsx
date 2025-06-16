@@ -2,7 +2,7 @@ import React, { useEffect, useCallback } from 'react';
 import { useVJ } from '../contexts/VJContext';
 import './VJKeyboardControls.css';
 
-const VJKeyboardControls = () => {
+const VJKeyboardControls = ({ isVisible = true }) => {
 	const { state, actions } = useVJ();
 	const { effects, gameMode } = state;
 
@@ -25,7 +25,7 @@ const VJKeyboardControls = () => {
 		const key = event.key.toLowerCase();
 
 		// Debug ALL key presses
-		console.log('🎹 Key pressed:', key, 'shiftKey:', event.shiftKey);
+		console.log('🎹 VJKeyboardControls Key pressed:', key, 'shiftKey:', event.shiftKey, 'gameMode active:', gameMode.isActive);
 
 		// Prevent default for space and arrow keys
 		if ([' ', 'arrowup', 'arrowdown', 'arrowleft', 'arrowright'].includes(key)) {
@@ -233,10 +233,10 @@ const VJKeyboardControls = () => {
 		};
 	}, [handleKeyDown]);
 
-	// Don't show keyboard controls UI when in game mode (game has its own UI)
-	// But keep the keyboard listeners active!
-	if (gameMode.isActive) {
-		return <div style={{ display: 'none' }} />; // Hidden but still mounted
+	// Always keep keyboard listeners active regardless of visibility!
+	// Only hide the UI based on props
+	if (gameMode.isActive || !isVisible) {
+		return <div style={{ display: 'none' }} />; // Hidden but still mounted with listeners
 	}
 
 	return (

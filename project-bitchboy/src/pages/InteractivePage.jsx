@@ -52,7 +52,7 @@ function InteractivePage() {
         <GameModeToggle />
 
         {/* Keyboard Controls Toggle Button */}
-        <button 
+        <button
           className={`keyboard-toggle-btn ${showKeyboardControls ? 'active' : ''}`}
           onClick={toggleKeyboardControls}
         >
@@ -61,7 +61,7 @@ function InteractivePage() {
 
         {/* Keyboard Controls Panel - Slide Animation Container */}
         <div className={`keyboard-controls-container ${showKeyboardControls ? 'visible' : ''}`}>
-          {showKeyboardControls && <VJKeyboardControls />}
+          <VJKeyboardControls isVisible={showKeyboardControls} />
         </div>
 
         {/* VJ Game Tutorial System */}
